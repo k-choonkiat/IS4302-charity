@@ -1,6 +1,9 @@
 <template>
 <div>
   <h2>Beneficiary Page</h2>
+  <h3> My Payout </h3>
+
+  <button @click="goWeb"> Report </button>
   <h3>Transaction Log</h3>
   <body>
     <table id="firstTable" class="center">
@@ -44,6 +47,9 @@ export default {
     returnToLogin: function() {
       //console.log("pushed")
       this.$router.push({ name: "Login" });
+    },
+    goWeb: function(){
+      window.open('https://www.nkfs.org/about-nkf/contact-us/')
     }
   }
 };

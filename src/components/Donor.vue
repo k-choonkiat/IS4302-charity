@@ -7,7 +7,12 @@
     <p class="para">Cillum proident ut mollit occaecat nostrud ad aliquip dolor. 
       Reprehenderit incididunt et excepteur ex esse fugiat adipisicing veniam eu ut aute fugiat est. Tempor et sint officia magna commodo dolore voluptate ex deserunt ad culpa. Elit fugiat occaecat consectetur tempor eiusmod occaecat occaecat officia ut. Reprehenderit dolore ullamco ad enim Lorem et id aliqua et aliquip nostrud. 
       Commodo enim veniam elit anim. Elit velit sint Lorem nisi cillum irure mollit aute eiusmod sit consectetur do. Ea id tempor velit sunt adipisicing enim eiusmod excepteur nisi cillum consectetur magna. Esse reprehenderit proident aute culpa eiusmod veniam id deserunt cupidatat anim mollit. Reprehenderit Lorem eu dolore Lorem et eu excepteur voluptate laborum enim cillum officia ea magna. Lorem consequat nisi amet eu sunt pariatur do elit anim duis deserunt reprehenderit elit.</p>
-    <h4>Progress bar here ; showing the target amount, number of ppl donated</h4>
+    <h4>Current Fundraising goal</h4>
+    <b-progress :max="max" height="2rem" :striped="striped">
+      <b-progress-bar :value="value" :striped="striped">
+        Progress: <strong>{{ value.toFixed(3) }} / {{ max }}</strong>
+      </b-progress-bar>
+    </b-progress><br>
     </div>
     <h4>My Donataions</h4>
     <button @click="showDonation"> Show Donations </button><br>
@@ -47,8 +52,8 @@
       </tbody>
     </table>
     <br>
-    <div class="wrapper">
-      <button>Donate</button>
+    <div class="wrapper"><br>
+      <button>Donate</button><br><br>
       <button @click="logout">Log Out</button>
     </div>
   </div>
@@ -59,6 +64,8 @@ export default {
   name: "Donor", //this is the name of the component
   data() {
     return {
+        max: 1000,
+        value: 750,
       txn: [
         { date: "1/1/19", Amount: 100, From: "OCBC", To: "Shan" },
         { date: "1/2/19", Amount: 100, From: "OCBC", To: "Nic" }

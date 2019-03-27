@@ -2,6 +2,20 @@
 <div>
   <h2>Beneficiary Page</h2>
   <h3> My Payout </h3>
+      <table id="payout" class="center">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="pay in myPayout" :key="pay.id">
+          <td>{{pay.date}}</td>
+          <td>{{pay.Amount}}</td>
+        </tr>
+      </tbody>
+    </table><br>
 
   <button @click="goWeb"> Report </button>
   <h3>Transaction Log</h3>
@@ -40,6 +54,9 @@ export default {
       rows: [
         { date: "1/1/19", Amount: 100, From: "OCBC", To: "Shan" },
         { date: "1/2/19", Amount: 100, From: "OCBC", To: "Nic" }
+      ],
+      myPayout: [
+        {date:"10/3/19" , Amount:500}
       ]
     };
   },

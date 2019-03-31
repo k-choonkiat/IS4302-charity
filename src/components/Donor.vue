@@ -13,6 +13,9 @@
         Progress: <strong>{{ value.toFixed(3) }} / {{ max }}</strong>
       </b-progress-bar>
     </b-progress><br>
+    <input type="number" placeholder="Amount to Donate" id="donation">
+    <button @click="addDonation"> Donate </button>
+    <br>
     </div>
     <h4>My Donataions</h4>
     <button @click="showDonation"> Show Donations </button><br>
@@ -53,7 +56,6 @@
     </table>
     <br>
     <div class="wrapper"><br>
-      <button>Donate</button><br><br>
       <button @click="logout">Log Out</button>
     </div>
   </div>
@@ -86,6 +88,15 @@ export default {
     logout: function() {
       //console.log("pushed")
       this.$router.push({ name: "Login" });
+  },
+  addDonation: function(){
+    var e = document.getElementById('donation');
+   // console.log(e);
+    var amt = e.value
+    /* eslint-disable */
+    console.log(amt);
+    this.value = Number(this.value)+ Number(amt);
+    console.log(this.value);
   }
   }
 };

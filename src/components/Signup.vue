@@ -1,12 +1,27 @@
 <template>
   <div class="sign-up">
-      <p> Let's create a new account</p><br>
-      <input type="text" placeholder="Email"><br>
-      <input type="password" placeholder="password"><br>
-      <button> Sign Up </button><br>
-      <span>Or Return to <router-link to="/"> Login page</router-link></span>
-
-
+    <p>Let's create a new account</p>
+    <br>
+    <input type="text" placeholder="Email">
+    <br>
+    <input type="password" placeholder="password">
+    <br>
+    <div class="form-group">
+      <label for="sel1">Choose the type of participant you are:</label>
+      <select class="form-control" id="sel1">
+        <option value="Donor" selected="selected">Donor</option>
+        <option value="Beneficiary">Beneficiary</option>
+        <option value="Charity">Charity</option>
+        <option value="Treasury">Treasury</option>
+      </select>
+      <button @click="signUp">Sign Up</button>
+    </div>
+    <button>Sign Up</button>
+    <br>
+    <span>
+      Or Return to
+      <router-link to="/">Login page</router-link>
+    </span>
   </div>
 </template>
 
@@ -16,8 +31,7 @@ export default {
   data() {
     return {};
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
